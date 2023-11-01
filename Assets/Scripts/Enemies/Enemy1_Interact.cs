@@ -48,7 +48,7 @@ public class Enemy1_Interact : MonoBehaviour
         showRange = false;
         detectRg = transform.Find("DetectRange");
         attackRg = transform.Find("AttackRange");
-        // navAgent.stoppingDistance = attackRange;
+        navAgent.stoppingDistance = attackRange;
     }
 
     // Update is called once per frame
