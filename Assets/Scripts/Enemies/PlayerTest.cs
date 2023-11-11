@@ -16,15 +16,11 @@ public class PlayerTest : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
+    /// </summary>
     void FixedUpdate()
     {
         transform.position += new Vector3(-Input.GetAxis("Horizontal"), 0, -Input.GetAxis("Vertical")) * 0.1f;
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "EnemyWeapon") {
-            Debug.Log("Hurt by " + other.name);
-        }
     }
 }
