@@ -20,7 +20,7 @@ public class Newgun : MonoBehaviour
         timer += Time.deltaTime;
         //float randomnum=Random.Range(0.1f,0.6f);
         //Debug.Log(randomnum);
-        if(timer > 0.5f)
+        if(timer > 1.5f)
         {
             //audiosource.Play(explosion);
             timer = 0; 
