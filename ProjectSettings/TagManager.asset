@@ -8,6 +8,8 @@ TagManager:
   - EnemyWeapon
   - Healingbox
   - Bullet
+  - Enemybomb
+  - Flag
   layers:
   - Default
   - TransparentFX
