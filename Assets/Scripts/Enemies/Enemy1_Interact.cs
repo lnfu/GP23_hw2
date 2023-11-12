@@ -9,6 +9,8 @@ public class Enemy1_Interact : MonoBehaviour
     private Animator anim;
     private NavMeshAgent navAgent;
 
+
+
     private GameObject player;
 
     [SerializeField]
@@ -55,73 +57,87 @@ public class Enemy1_Interact : MonoBehaviour
     void Update()
     {
         AnimatorStateInfo animState = anim.GetCurrentAnimatorStateInfo(0);
-        
-        if (GetHealth() <= 0) {
+
+        if (GetHealth() <= 0)
+        {
             // this enemy is dead
             anim.SetBool("isDead", true);
         }
 
-        if (animState.fullPathHash == idleState || animState.fullPathHash == runState) {
+        if (animState.fullPathHash == idleState || animState.fullPathHash == runState)
+        {
             // Detect player's position
             float dis = (transform.position - player.transform.position).magnitude;
-            if (dis <= attackRange) {
+            if (dis <= attackRange)
+            {
                 // navAgent.isStopped = true;
                 anim.SetBool("Attack", true);
             }
-            else if (dis > attackRange && dis <= detectRange) {
+            else if (dis > attackRange && dis <= detectRange)
+            {
                 navAgent.SetDestination(player.transform.position);
                 navAgent.isStopped = false;
             }
-            else {
+            else
+            {
                 navAgent.isStopped = true;
             }
             float speed = new Vector3(navAgent.velocity.x, 0f, navAgent.velocity.z).magnitude;
             anim.SetFloat("Speed", speed);
         }
-        else if (animState.fullPathHash == attackState) {
+        else if (animState.fullPathHash == attackState)
+        {
             // enable knife to hit player
             navAgent.isStopped = true;
             GameObject.Find(transform.name + "/Bip001/Bip001 Prop1/Knife").GetComponent<BoxCollider>().enabled = true;
             anim.SetBool("Attack", false);
         }
-        else if (animState.fullPathHash == damageState) {
+        else if (animState.fullPathHash == damageState)
+        {
             navAgent.isStopped = true;
             anim.SetBool("Hurt", false);
         }
-        else if (animState.fullPathHash == deathState) {
+        else if (animState.fullPathHash == deathState)
+        {
             // play dead animation
             navAgent.isStopped = true;
             // disable this enemy to collide
             transform.GetComponent<BoxCollider>().enabled = false;
         }
-        else if (animState.fullPathHash == removeState) {
+        else if (animState.fullPathHash == removeState)
+        {
             // remove this enemy
             Destroy(gameObject);
         }
 
-        if (animState.fullPathHash != attackState) {
+        if (animState.fullPathHash != attackState)
+        {
             // disable knife to hit player
             GameObject.Find(transform.name + "/Bip001/Bip001 Prop1/Knife").GetComponent<BoxCollider>().enabled = false;
         }
 
 
         // Range Debug
-        if (Input.GetKeyDown(KeyCode.O)) {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
             showRange = !showRange;
             detectRg.gameObject.SetActive(showRange);
             attackRg.gameObject.SetActive(showRange);
         }
     }
 
-    public float GetHealth() {
+    public float GetHealth()
+    {
         return health;
     }
 
-    public void SetHealth(float newHealth) {
+    public void SetHealth(float newHealth)
+    {
         health = newHealth;
     }
 
-    public void LoseHealth(float lose) {
+    public void LoseHealth(float lose)
+    {
         health -= lose;
         anim.SetBool("Hurt", true);
     }

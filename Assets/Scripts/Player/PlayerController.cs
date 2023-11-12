@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = Physics.Raycast(foot.position, Vector3.down, groundCheckDistance);
         //Debug.DrawRay(foot.position, Vector3.down*groundCheckDistance);
-        if (isGrounded && velocity.y < 0 ) 
+        if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
@@ -43,12 +43,12 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             Jump();
-            
+
         }
         velocity.y += gravity * Time.deltaTime;
         //characterController.Move(velocity * Time.deltaTime);
 
-        if(Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             anim.SetTrigger("Attack");
         }
@@ -56,14 +56,13 @@ public class PlayerController : MonoBehaviour
     }
     private void Move()
     {
-        
+
         float moveZ = Input.GetAxis("Vertical");
         float rot = Input.GetAxis("Horizontal");
         anim.SetFloat("Velocity", moveZ);
         //moveDirection *= moveSpeed;
         // print(moveDirection);
         //characterController.SimpleMove(moveDirection);
-        print(moveZ);
         //         if(moveZ != 0)
         angle += rot * Time.deltaTime;
         //         {
@@ -88,7 +87,7 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("Jump");
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
-        
+
     }
 
 
