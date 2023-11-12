@@ -12,6 +12,8 @@ public class Status : MonoBehaviour
     private void Start()
     {
         //DontDestroyOnLoad(hp);
+        GameObject gameController = GameObject.Find("GameController");
+        hp = gameController.GetComponent<GameController>().playerHP;
     }
 
     public void DecreaseHP(int delta)
@@ -72,7 +74,7 @@ public class Status : MonoBehaviour
         }*/
     }
 
-   void OnCollisionEnter(Collision other)
+    void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Enemybomb")
         {
@@ -82,13 +84,15 @@ public class Status : MonoBehaviour
         {
 
             SceneManager.LoadScene(2);
-            //DontDestroyOnLoad(gameObject);
+            GameObject gameController = GameObject.Find("GameController");
+            gameController.GetComponent<GameController>().playerHP = hp;
         }
         if (other.gameObject.tag == "Flag2")
         {
 
             SceneManager.LoadScene(3);
-            //DontDestroyOnLoad(gameObject);
+            GameObject gameController = GameObject.Find("GameController");
+            gameController.GetComponent<GameController>().playerHP = hp;
         }
 
     }
