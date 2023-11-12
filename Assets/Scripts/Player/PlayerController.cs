@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,9 +25,11 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        //DontDestroyOnLoad(gameObject);
         characterController = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
         angle = 0;
+
     }
 
     private void Update()

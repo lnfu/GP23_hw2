@@ -9,7 +9,9 @@ TagManager:
   - Healingbox
   - Bullet
   - Enemybomb
-  - Flag
+  - Flag1
+  - Flag2
+  - Flag3
   layers:
   - Default
   - TransparentFX

@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Status : MonoBehaviour
 {
     public HealthPoint healthPoint;
 
     public int hp = 100;
+
+    private void Start()
+    {
+        //DontDestroyOnLoad(hp);
+    }
 
     public void DecreaseHP(int delta)
     {
@@ -72,5 +78,18 @@ public class Status : MonoBehaviour
         {
             DecreaseHP(40);
         }
+        if (other.gameObject.tag == "Flag1")
+        {
+
+            SceneManager.LoadScene(2);
+            //DontDestroyOnLoad(gameObject);
+        }
+        if (other.gameObject.tag == "Flag2")
+        {
+
+            SceneManager.LoadScene(3);
+            //DontDestroyOnLoad(gameObject);
+        }
+
     }
 }
