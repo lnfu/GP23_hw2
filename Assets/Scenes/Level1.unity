@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571328, b: 0.3069218, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -201,7 +201,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89425205}
-  m_LocalRotation: {x: 0.08055799, y: 0.872704, z: -0.15409328, w: 0.45623842}
+  m_LocalRotation: {x: 0.08055799, y: 0.872704, z: -0.1540933, w: 0.4562384}
   m_LocalPosition: {x: 85.79718, y: 2.9, z: 33.79054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1874,6 +1874,7 @@ GameObject:
   - component: {fileID: 1591104686}
   - component: {fileID: 1591104687}
   - component: {fileID: 1591104688}
+  - component: {fileID: 1591104689}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1922,7 +1923,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0a578d55a40a143b6d1c059dcc4554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerhp: 0
+  playerHP: 100
+--- !u!82 &1591104689
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591104685}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f08f484b59f51e14880e1b253556907b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.045
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1695509781
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,7 +2530,7 @@ PrefabInstance:
     - target: {fileID: 7926225682474040634, guid: 281e1f388ed718845bb6aa48d4dd28f8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.45623842
+      value: 0.4562384
       objectReference: {fileID: 0}
     - target: {fileID: 7926225682474040634, guid: 281e1f388ed718845bb6aa48d4dd28f8,
         type: 3}
@@ -2448,7 +2545,7 @@ PrefabInstance:
     - target: {fileID: 7926225682474040634, guid: 281e1f388ed718845bb6aa48d4dd28f8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.15409328
+      value: -0.1540933
       objectReference: {fileID: 0}
     - target: {fileID: 7926225682474040634, guid: 281e1f388ed718845bb6aa48d4dd28f8,
         type: 3}

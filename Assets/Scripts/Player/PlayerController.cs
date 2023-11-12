@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     public float angle;
 
+    public AudioSource fleshAudio;
+    public AudioSource jumpAudio;
+    public AudioSource walkAudio;
 
 
     private void Start()
@@ -53,6 +56,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             anim.SetTrigger("Attack");
+            fleshAudio.Play();
         }
 
     }
@@ -60,6 +64,18 @@ public class PlayerController : MonoBehaviour
     {
 
         float moveZ = Input.GetAxis("Vertical");
+
+        if (moveZ != 0 && !walkAudio.isPlaying)
+        {
+            walkAudio.Play();
+        }
+
+        if (moveZ == 0 && walkAudio.isPlaying)
+        {
+            walkAudio.Stop();
+        }
+
+
         float rot = Input.GetAxis("Horizontal");
         anim.SetFloat("Velocity", moveZ);
         //moveDirection *= moveSpeed;
@@ -85,6 +101,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
+            jumpAudio.Play();
             //Debug.Log("jump");
             anim.SetTrigger("Jump");
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
