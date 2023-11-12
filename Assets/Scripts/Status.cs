@@ -26,6 +26,11 @@ public class Status : MonoBehaviour
             hp = 0;
             gameObject.SetActive(false);
         }
+
+        if (hp >= 100 && gameObject.tag == "Player")
+        {
+            hp = 100;
+        }
     }
     public void SetHP(int value)
     {
@@ -41,12 +46,31 @@ public class Status : MonoBehaviour
     }
 
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         print(collision.gameObject.name);
         if (collision.gameObject.tag == "Bullet")
         {
             DecreaseHP(5);
+        }
+
+        if (collision.gameObject.tag == "Healingbox")
+        {
+            DecreaseHP(-5);
+            Destroy(collision.gameObject);
+        }
+
+        /*if (collision.gameObject.tag == "Enemybomb")
+        {
+            DecreaseHP(40);
+        }*/
+    }
+
+   void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Enemybomb")
+        {
+            DecreaseHP(40);
         }
     }
 }
