@@ -9,6 +9,8 @@ public class Status : MonoBehaviour
 
     public int hp = 100;
 
+    public GameObject hurtParticle;
+
     private void Start()
     {
         //DontDestroyOnLoad(hp);
@@ -20,7 +22,12 @@ public class Status : MonoBehaviour
     {
         if (hp > 0)
         {
+            int old_hp = hp; 
             hp -= delta;
+            if (old_hp >= hp) {
+                Vector3 halfHeight = new (0f, 0.8f, 0f);
+                Instantiate(hurtParticle, transform.position + halfHeight, Quaternion.identity);
+            }
         }
 
         if (hp <= 0 && gameObject.tag == "Player")

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -767,7 +767,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 50
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -792,7 +792,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574818899}
-  m_LocalRotation: {x: 0.17155595, y: -0.16047387, z: 0.02833485, w: 0.97160375}
+  m_LocalRotation: {x: 0.17155597, y: -0.16047387, z: 0.028334856, w: 0.97160375}
   m_LocalPosition: {x: 8.764954, y: 3.26, z: -8.541706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1124,6 +1124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoint: {fileID: 1008267047}
   hp: 100
+  hurtParticle: {fileID: 6052519304210469798, guid: 1dc0683919c75bd4d9f9360bb04cbd06,
+    type: 3}
 --- !u!114 &1116946836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2078,6 +2080,12 @@ PrefabInstance:
       propertyPath: healthPoint
       value: 
       objectReference: {fileID: 1829844371}
+    - target: {fileID: 3081729042193474836, guid: d54154075d900bbf5a69ea0a773e637f,
+        type: 3}
+      propertyPath: hurtParticle
+      value: 
+      objectReference: {fileID: 4574760008546385772, guid: e7a2ba63442cc21488515fd6a2bc72ac,
+        type: 3}
     - target: {fileID: 3081729042193474838, guid: d54154075d900bbf5a69ea0a773e637f,
         type: 3}
       propertyPath: m_Height
@@ -2304,7 +2312,7 @@ PrefabInstance:
     - target: {fileID: 7926225682474040634, guid: 281e1f388ed718845bb6aa48d4dd28f8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.17155595
+      value: 0.17155597
       objectReference: {fileID: 0}
     - target: {fileID: 7926225682474040634, guid: 281e1f388ed718845bb6aa48d4dd28f8,
         type: 3}
@@ -2314,7 +2322,7 @@ PrefabInstance:
     - target: {fileID: 7926225682474040634, guid: 281e1f388ed718845bb6aa48d4dd28f8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.02833485
+      value: 0.028334856
       objectReference: {fileID: 0}
     - target: {fileID: 7926225682474040634, guid: 281e1f388ed718845bb6aa48d4dd28f8,
         type: 3}
