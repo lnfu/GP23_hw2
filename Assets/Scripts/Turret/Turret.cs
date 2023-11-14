@@ -15,43 +15,6 @@ public class Turret : MonoBehaviour
     [HideInInspector] public bool outOfRange;
     [HideInInspector] public bool aimed;
 
-    void OnDrawGizmos()
-    {
-#if UNITY_EDITOR
-        var range = 20f;
-        var dashLineSize = 2f;
-        var turret = transform;
-        var origin = turret.position;
-        var hardpoint = turret.parent;
-        
-        if (!hardpoint) return;
-        var from = Quaternion.AngleAxis(-angle, hardpoint.up) * hardpoint.forward;
-        
-        Handles.color = new Color(0, 1, 0, .2f);
-        Handles.DrawSolidArc(origin, turret.up, from, angle * 2, range);
-
-        if (!target) return;
-        
-        var projection = Vector3.ProjectOnPlane(target.position - turret.position, hardpoint.up);
-
-        // projection line
-        Handles.color = Color.white;
-        Handles.DrawDottedLine(target.position, turret.position + projection, dashLineSize);
-        
-        // do not draw target indicator when out of angle
-        if (Vector3.Angle(hardpoint.forward, projection) > angle) return;
-        
-        // target line
-        Handles.color = Color.red;
-        Handles.DrawLine(turret.position, turret.position + projection);
-        
-        // range line
-        Handles.color = Color.green;
-        Handles.DrawWireArc(origin, turret.up, from, angle * 2, projection.magnitude);
-        Handles.DrawSolidDisc(turret.position + projection, turret.up, .5f);
-#endif
-    }
-
     void Update()
     {
         Aim(target.position);
@@ -84,5 +47,13 @@ public class Turret : MonoBehaviour
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, maxTurnSpeed * Time.deltaTime);
     }
+
+    /*void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+    }*/
 }
 
