@@ -49,7 +49,10 @@ public class UIManager : MonoBehaviour
     public void ShowInstructionsPanel()
     {
         instructionsPanel.SetActive(true);
-        print("test");
+    }
+    public void HideInstructionsPanel()
+    {
+        instructionsPanel.SetActive(false);
     }
 
     void Update()
