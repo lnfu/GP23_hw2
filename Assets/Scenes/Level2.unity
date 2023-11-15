@@ -1747,6 +1747,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4067271472129822708, guid: 570b6244747bb3a8db6dd823a922c301,
+        type: 3}
+      propertyPath: instructionsPanel
+      value: 
+      objectReference: {fileID: 3443328943450239429, guid: f6f8d3c3566d9cd71ae13babbc04f78d,
+        type: 3}
     - target: {fileID: 4067271472129822709, guid: 570b6244747bb3a8db6dd823a922c301,
         type: 3}
       propertyPath: m_RootOrder
