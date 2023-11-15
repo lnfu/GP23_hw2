@@ -7,12 +7,16 @@ public class Status : MonoBehaviour
 {
     public HealthPoint healthPoint;
 
+    public GameObject losePanel;
+
     public int hp = 100;
 
     public GameObject hurtParticle;
 
     private void Start()
     {
+        losePanel.SetActive(false);
+
         //DontDestroyOnLoad(hp);
         GameObject gameController = GameObject.Find("GameController");
         hp = gameController.GetComponent<GameController>().playerHP;
@@ -22,10 +26,11 @@ public class Status : MonoBehaviour
     {
         if (hp > 0)
         {
-            int old_hp = hp; 
+            int old_hp = hp;
             hp -= delta;
-            if (old_hp >= hp) {
-                Vector3 halfHeight = new (0f, 0.8f, 0f);
+            if (old_hp >= hp)
+            {
+                Vector3 halfHeight = new(0f, 0.8f, 0f);
                 Instantiate(hurtParticle, transform.position + halfHeight, Quaternion.identity);
             }
         }
@@ -33,7 +38,7 @@ public class Status : MonoBehaviour
         if (hp <= 0 && gameObject.tag == "Player")
         {
             hp = 0;
-            print("Lose");
+            losePanel.SetActive(true);
         }
 
         if (hp <= 0 && gameObject.tag == "Enemy")
