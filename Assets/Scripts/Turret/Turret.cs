@@ -11,7 +11,7 @@ public class Turret : MonoBehaviour
     public float maxTurnSpeed = 90f;
 
     public Transform target;
-
+    public GameObject Former;
     [HideInInspector] public bool outOfRange;
     [HideInInspector] public bool aimed;
 
@@ -48,12 +48,12 @@ public class Turret : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, maxTurnSpeed * Time.deltaTime);
     }
 
-    /*void OnCollisionEnter(Collision other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player"&&Former==null)
         {
             Destroy(gameObject);
         }
-    }*/
+    }
 }
 

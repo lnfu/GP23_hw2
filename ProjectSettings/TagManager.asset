@@ -12,6 +12,7 @@ TagManager:
   - Flag1
   - Flag2
   - Flag3
+  - PlayerWeapon
   layers:
   - Default
   - TransparentFX

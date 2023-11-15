@@ -3528,6 +3528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoint: {fileID: 0}
   hp: 100
+  hurtParticle: {fileID: 0}
 --- !u!54 &-7375289808385179088
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4249,7 +4250,7 @@ GameObject:
   - component: {fileID: 3083620856589752521}
   m_Layer: 0
   m_Name: Weapons_4
-  m_TagString: Untagged
+  m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6144,7 +6145,7 @@ GameObject:
   - component: {fileID: 3086255539811588183}
   m_Layer: 0
   m_Name: Weapons_3
-  m_TagString: Untagged
+  m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
