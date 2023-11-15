@@ -38,13 +38,14 @@ public class Status : MonoBehaviour
         if (hp <= 0 && gameObject.tag == "Player")
         {
             hp = 0;
+            Destroy(gameObject);
             losePanel.SetActive(true);
         }
 
         if (hp <= 0 && gameObject.tag == "Enemy")
         {
             hp = 0;
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
 
         if (hp >= 100 && gameObject.tag == "Player")

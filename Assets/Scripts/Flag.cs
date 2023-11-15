@@ -14,7 +14,8 @@ public class Flag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Enemy==null)
+        // Enemy = GameObject.FindWithTag("Enemy");
+        if (Enemy == null)
         {
             this.GetComponent<CapsuleCollider>().enabled = true;
         }
